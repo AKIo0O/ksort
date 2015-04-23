@@ -12,10 +12,17 @@ $ npm install ksort
 Simple usage:
 
 ```JavaScript
-
-
-
 var ksort = require('ksort');
+
+var array = ksort(array, function(a, b){ return a.index < b.index;});
+            ksort(array);
+```
+
+
+
+
+
+```JavaScript
 
 var arrayObject, arrayNormal;
 
@@ -26,7 +33,6 @@ iterator(100, function(i){
   arrayObject.push({index: i});
   arrayNormal.push(i);
 });
-
 
 arrayObject = ksort(arrayObject, function(a, b){ return a.index < b.index;});
 arrayNormal = ksort(arrayNormal);
@@ -39,7 +45,5 @@ function iterator(end, func){
 
   while(i-->0) func(i);
 }
-
-
 ```
 
